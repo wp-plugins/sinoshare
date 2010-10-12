@@ -18,7 +18,7 @@
 
 /*
 Plugin Name: 中文分享/收藏插件
-Plugin URI: http://www.patent-cn.com/download
+Plugin URI: http://www.patent-cn.com/2010/08/22/43630.shtml
 Description:wordpress的日志文章分享收藏插件，网站的访问者可以通过这个插件分享文章至各大中文社交网站，帮您提高网站流量，并且支持后台统计。本插件是参考sharethis做的本土版本。英文原版：<a href="http://alexking.org/projects/share-this" target="_blank">http://alexking.org/projects/share-this</a>.
 Version: 1.7
 Author: 专利之家
