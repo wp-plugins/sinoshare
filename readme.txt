@@ -4,7 +4,7 @@ Contributors: 专利之家
 Donate link: http://www.patent-cn.com/download
 Requires at least: 2.8
 Tested up to: 2.9.2
-Stable tag: 1.6
+Stable tag: 1.7
 
 wordpress的日志文章分享收藏插件。
 
@@ -39,6 +39,10 @@ wordpress的日志文章分享收藏插件。
 本插件利用ajax记录访问信息，请确认浏览器没有禁用javascript。
 
 == Changelog == 
+= 1.7 =
+
+* 添加了google reader和网易微博
+
 = 1.6 =
 
 * 修改了安装时出现的一个bug

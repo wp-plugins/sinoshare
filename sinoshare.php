@@ -20,7 +20,7 @@
 Plugin Name: 中文分享/收藏插件
 Plugin URI: http://www.patent-cn.com/download
 Description:wordpress的日志文章分享收藏插件，网站的访问者可以通过这个插件分享文章至各大中文社交网站，帮您提高网站流量，并且支持后台统计。本插件是参考sharethis做的本土版本。英文原版：<a href="http://alexking.org/projects/share-this" target="_blank">http://alexking.org/projects/share-this</a>.
-Version: 1.6
+Version: 1.7
 Author: 专利之家
 Author URI: http://www.patent-cn.com
 */
@@ -53,6 +53,10 @@ $social_sites = array( //最热门的网站，在鼠标滑过时出现的窗口�
 		'name' => '发送邮件'
 		, 'url' => ''
 	)
+	,'googlereader' => array(
+		'name' => '谷歌Reader'
+		, 'url' => 'javascript:var b=document.body;var GR________bookmarklet_domain=\'http://www.google.com\';if(b&&!document.xmlVersion){void(z=document.createElement(\'script\'));void(z.src=\'http://www.google.com/reader/ui/link-bookmarklet.js\');void(b.appendChild(z));}else{}'
+	)
     ,'baidu' => array(
 		'name' => '百度搜藏'
 		, 'url' => 'http://cang.baidu.com/do/add?it={title}&iu={url}&dc=&fr=ien#nw=1'
@@ -64,6 +68,10 @@ $social_sites = array( //最热门的网站，在鼠标滑过时出现的窗口�
 	,'sinaweibo'=>array(
 		'name' => '新浪微博'
 		, 'url' => 'http://v.t.sina.com.cn/share/share.php?title={title}&url={url}'
+	)
+	,'163'=>array(
+		'name' => '网易微博'
+		, 'url' => 'http://t.163.com/article/user/checkLogin.do?source=网易微博&info={title}{url}'
 	)
 	,'sohubai'=>array(
 		'name' => '搜狐白社会'
@@ -95,19 +103,19 @@ $social_sites = array( //最热门的网站，在鼠标滑过时出现的窗口�
 	)
 	, 'zhuaxia' => array(
 		'name' => '抓虾'
-		, 'url' => 'http://www.zhuaxia.com/add_channel.php?url=http://feeds.feedburner.com/patentcn'
+		, 'url' => 'http://www.zhuaxia.com/add_channel.php?url={url}'
 	)
 	, 'xianguo' => array(
 		'name' => '鲜果'
-		, 'url' => 'http://www.xianguo.com/subscribe.php?url=http://feeds.feedburner.com/patentcn'
+		, 'url' => 'http://xianguo.com/service/submitfav/?link={url}&title={title}'
 	)
 	, 'youdao' => array(
 		'name' => '有道'
-		, 'url' => 'http://reader.youdao.com/b.do?keyfrom=feedburner&url=http://feeds.feedburner.com/patentcn'
+		, 'url' => 'http://shuqian.youdao.com/manage?a=popwindow&url={url}&title={title}'
 	)
 	, '9dian' => array(
 		'name' => '九点'
-		, 'url' => 'http://9.douban.com/reader/subscribe?url=http://feeds.feedburner.com/patentcn'
+		, 'url' => 'http://9.douban.com/recommend/?url={url}&title={title}'
 	)
 
 );
@@ -126,6 +134,10 @@ $social_sites_full = array(//所有网站，点“查看更多”后的窗口中
 		'name' => '发送邮件'
 		, 'url' => ''
 	)
+	,'googlereader' => array(
+		'name' => '谷歌Reader'
+		, 'url' => 'javascript:var b=document.body;var GR________bookmarklet_domain=\'http://www.google.com\';if(b&&!document.xmlVersion){void(z=document.createElement(\'script\'));void(z.src=\'http://www.google.com/reader/ui/link-bookmarklet.js\');void(b.appendChild(z));}else{}'
+	)
     ,'baidu' => array(
 		'name' => '百度搜藏'
 		, 'url' => 'http://cang.baidu.com/do/add?it={title}&iu={url}&dc=&fr=ien#nw=1'
@@ -137,6 +149,10 @@ $social_sites_full = array(//所有网站，点“查看更多”后的窗口中
 	,'sinaweibo'=>array(
 		'name' => '新浪微博'
 		, 'url' => 'http://v.t.sina.com.cn/share/share.php?title={title}&url={url}'
+	)
+	,'163'=>array(
+		'name' => '网易微博'
+		, 'url' => 'http://t.163.com/article/user/checkLogin.do?source=网易微博&info={title}{url}'
 	)
 	,'sohubai'=>array(
 		'name' => '搜狐白社会'
@@ -168,19 +184,19 @@ $social_sites_full = array(//所有网站，点“查看更多”后的窗口中
 	)
 	, 'zhuaxia' => array(
 		'name' => '抓虾'
-		, 'url' => 'http://www.zhuaxia.com/add_channel.php?url=http://feeds.feedburner.com/patentcn'
+		, 'url' => 'http://www.zhuaxia.com/add_channel.php?url={url}'
 	)
 	, 'xianguo' => array(
 		'name' => '鲜果'
-		, 'url' => 'http://www.xianguo.com/subscribe.php?url=http://feeds.feedburner.com/patentcn'
+		, 'url' => 'http://xianguo.com/service/submitfav/?link={url}&title={title}'
 	)
 	, 'youdao' => array(
 		'name' => '有道'
-		, 'url' => 'http://reader.youdao.com/b.do?keyfrom=feedburner&url=http://feeds.feedburner.com/patentcn'
+		, 'url' => 'http://shuqian.youdao.com/manage?a=popwindow&url={url}&title={title}'
 	)
 	, '9dian' => array(
 		'name' => '九点'
-		, 'url' => 'http://9.douban.com/reader/subscribe?url=http://feeds.feedburner.com/patentcn'
+		, 'url' => 'http://9.douban.com/recommend/?url={url}&title={title}'
 	)
 	, 'twitter' => array(
 		'name' => 'Twitter'
@@ -228,7 +244,7 @@ $social_sites_full = array(//所有网站，点“查看更多”后的窗口中
 	)
 	, 'renjian' => array(
 		'name' => '人间'
-		, 'url' => 'http://renjian.com/outside/share_link.xhtml?link={url}&source=www.patent-cn.com '
+		, 'url' => 'http://renjian.com/outside/share_link.xhtml?link={url} '
 	)
 	, 'follow5' => array(
 		'name' => 'Follow5'
@@ -264,7 +280,7 @@ $social_sites_full = array(//所有网站，点“查看更多”后的窗口中
 	)
 	, 'tongxue' => array(
 		'name' => '同学微博'
-		, 'url' => 'http://share.tongxue.com/share/buttonshare.php?link={url}&title={title}&source=patent-cn'
+		, 'url' => 'http://share.tongxue.com/share/buttonshare.php?link={url}&title={title}'
 	)
 	, 'wake' => array(
 		'name' => '挖客网'
@@ -357,9 +373,8 @@ function snshare_share(id, url, title, html_id) {
 	
 	var form = $('snshare_form');
 	
-	var post_id = $('snshare_post_id');
 
-	if (form.style.display == 'block' && post_id.value == id) {
+	if (form.style.display == 'block' ) {
 		form.style.display = 'none';
 		return;
 	}
@@ -413,9 +428,8 @@ function snshare_share_more(id, url, title, html_id) {
 	
 	var form = $('snshare_form');
 	
-	var post_id = $('snshare_post_id');
 
-	if (form.style.display == 'block' && post_id.value == id) {
+	if (form.style.display == 'block' ) {
 		form.style.display = 'none';
 		return;
 	}
@@ -789,7 +803,6 @@ function snshare_share_form() {
 	ob_start();
 ?>
 		<div id="snshare_credit" align="right"><img align=absmiddle src="http://www.patent-cn.com/image/sicon.png" width="16" height="16" border="0">&nbsp;<a href="http://www.patent-cn.com" target="_blank" title="专利之家">Powered by patent-cn.com</a></div>
-	<!-- Share This END -->
 <?php
 }
 if (SNSHARE_ADDTOFOOTER) {
